@@ -1,5 +1,4 @@
 {
-  "homepage": "https://01Dhsking.github.io/Contact_app",
   "name": "react",
   "private": true,
   "version": "0.0.0",
@@ -8,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "firebase": "^10.11.1",

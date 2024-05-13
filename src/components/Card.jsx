@@ -3,14 +3,14 @@ import { Trash2 } from 'lucide-react'
 import {db} from "../../config/firebase"
 import { deleteDoc, doc } from 'firebase/firestore'
 import { AddAndUpdate } from './AddAndUpdate'
-import { useModal } from '../hook/useModal'
+import { useModal_addContact } from '../hook/useModal_addContact'
 import { CircleChevronUp } from 'lucide-react'
 import { CircleChevronDown } from 'lucide-react'
 import { useState } from 'react'
 
 export function Card({contact , handleClick}) {
 
-  const {openModal, onClose, onOpen} = useModal()
+  const {openModal, onClose, onOpen} = useModal_addContact()
   const deleteContact = async(id) => {
     try {
       await deleteDoc(doc(db, "contact", id))

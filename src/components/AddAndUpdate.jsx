@@ -1,6 +1,6 @@
-import { Modal } from "./Modal"
+import { Modal_addContact } from "./Modal_addContact"
 import { ErrorMessage, Field, Form, Formik } from "formik"
-import {addDoc, doc, collection, setDoc } from "firebase/firestore"
+import { addDoc, doc, collection, setDoc } from "firebase/firestore"
 import { db } from "../../config/firebase"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -58,7 +58,7 @@ export const AddAndUpdate = ({openModal, onClose, isUpdate, contact}) => {
 
     return (
         <div>
-            <Modal openModal={openModal} onClose={onClose}>
+            <Modal_addContact openModal ={openModal} onClose={onClose}>
                 <Formik validationSchema={contactShemaValidation}
                     initialValues={isUpdate ? {
                         name: contact.name,
@@ -111,7 +111,7 @@ export const AddAndUpdate = ({openModal, onClose, isUpdate, contact}) => {
                         </button>
                     </Form>
                 </Formik>
-            </Modal>
+            </Modal_addContact>
         </div>
     )
 }

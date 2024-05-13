@@ -7,18 +7,18 @@ import { collection, onSnapshot } from 'firebase/firestore'
 import {db} from "../../config/firebase"
 
 
-export function ControlCenter() {
+export function ControlCenter({onOpen_setting, onOpen_profil}) {
 
     return (
         <div className='flex items-center p-7 shadow-md mb-5'>
             <div className='w-20'>
-                <User size={42} color='gray' className='cursor-pointer' />
+                <User onClick={onOpen_profil} size={42} color='gray' className='cursor-pointer' />
             </div>
             <div className='w-full flex justify-center'>
                 <img src={Logo} alt="" className=" w-20" />
             </div>
             <div className='w-20'>
-                <Settings size={42} color='gray' className='cursor-pointer' />
+                <Settings onClick={onOpen_setting} size={42} color='gray' className='cursor-pointer' />
             </div>
         </div>
     )
@@ -26,7 +26,6 @@ export function ControlCenter() {
 
 export const SearchBar = ({contact, setContact, openModal, onClose, onOpen}) => {
 
-    // const {openModal, onClose, onOpen} = useModal()
     const filterContacts = (e) => {
         const value = e.target.value
         const contactsRef = collection(db, "contact")

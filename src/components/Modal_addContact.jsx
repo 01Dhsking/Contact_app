@@ -1,13 +1,13 @@
 import { X } from 'lucide-react'
 import { createPortal } from 'react-dom'
 
-export const Modal = ({onClose, openModal, children}) => {
+export const    Modal_addContact = ({onClose, openModal, children}) => {
     return createPortal(
         <>
         {
             openModal && (
                 <div className='absolute top-0 z-40 grid h-screen w-screen
-                place-item-center backdrop-dlur'>
+                place-item-center backdrop-blur-sm'>
                     <div className='relative z-50 m-auto min-h-[200px] min-w-[80%] bg-white
                     p-4 shadow-lg border border-teal-500 rounded'>
                         <div className='flex justify-end'>
@@ -20,6 +20,6 @@ export const Modal = ({onClose, openModal, children}) => {
             )
         }
         </>
-        , document.getElementById("modal-root")
+        , document.getElementById("Modal_addContact-root")
     )
 }
